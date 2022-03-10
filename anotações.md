@@ -28,3 +28,12 @@ end
 Elixir possui o que retorno implicito, então qualquer que seja o ultimo valor, ele sera retornado.
 
 recomplie -> comando para recompilar o código.
+
+Elixir permite métodos com o mesmo nome porém apenas com quantidade de parâmetros diferentes.
+
+metodo/1 -> quer dizer que tem apenas um parâmetro e por ai vai.
+
+o nome que se dar ao números de parâmetros de um método é Aridade
+
+Imutabilidade
+elixir tem o conceito de imutabilidade ou seja nenhum estrutura de dados sofre alteração, o elixir pega ela e cria uma nova estrutura, mantendo assim o estado atual da estrutura de origem.

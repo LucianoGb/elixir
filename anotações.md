@@ -7,7 +7,7 @@ de funções.
 
 declaração:
 
-defmodule nome do
+defmodule nomeModulo do
 #code here
 end
 
@@ -36,4 +36,4 @@ metodo/1 -> quer dizer que tem apenas um parâmetro e por ai vai.
 o nome que se dar ao números de parâmetros de um método é Aridade
 
 Imutabilidade
-elixir tem o conceito de imutabilidade ou seja nenhum estrutura de dados sofre alteração, o elixir pega ela e cria uma nova estrutura, mantendo assim o estado atual da estrutura de origem.
+elixir tem o conceito de imutabilidade ou seja nenhuma estrutura de dados sofre alteração, o elixir pega ela e cria uma nova estrutura, mantendo assim o estado atual da estrutura de origem.

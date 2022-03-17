@@ -27,7 +27,7 @@ end
 
 Elixir possui o que retorno implicito, então qualquer que seja o ultimo valor, ele sera retornado.
 
-recomplie -> comando para recompilar o código.
+recompile -> comando para recompilar o código.
 
 Elixir permite métodos com o mesmo nome porém apenas com quantidade de parâmetros diferentes.
 

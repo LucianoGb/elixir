@@ -6,4 +6,8 @@ defmodule Cards do
  def shuffle(deck) do
    Enum.shuffle(deck)
  end
+# Quando um metódo retorna true ou falso, por conversão colocasse ? ao fim do nome
+ def contains?(deck, card) do
+   Enum.member?(deck, card)
+ end
 end

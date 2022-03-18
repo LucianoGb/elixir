@@ -36,6 +36,18 @@ nulo = nil // em elixir nulo é chamado de nill
 
 ```
 
+### Atom
+Atons são constantes cujo o valor é o seu próprio nome.
+
+Muitas vezes eles são usados ​​para expressar o estado de uma operação, usando valores como :oke :error.
+
+Os booleanos truee false também são átomos.
+
+Os átomos devem ser compostos de caracteres Unicode, como letras, números, sublinhado e @. Se a palavra-chave tiver um caractere que não pertença à categoria acima, como espaços, você pode colocá-lo entre aspas
+
+```elixir
+  :"this is an atom with spaces" :"this is an atom with spaces"
+```
 
 Em elixir temos o que chamamos de módulos e eles são um conjunto
 de funções.

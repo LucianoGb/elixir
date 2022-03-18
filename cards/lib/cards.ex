@@ -1,4 +1,6 @@
 defmodule Cards do
+
+ def hello, do: :world
  def  create_deck do
    ["Ace", "One", "Two"]  # ARRAY
  end

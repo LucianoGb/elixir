@@ -48,7 +48,40 @@ Os átomos devem ser compostos de caracteres Unicode, como letras, números, sub
 ```elixir
   :"this is an atom with spaces" :"this is an atom with spaces"
 ```
+### Lista
+Tem o conceito de lista encadeada.
+O melhor jeito de inteirar uma lista é adicionando valor ao seu inicio.
 
+```elixir
+  x = [1, 2, 3, 4, 5] //declaração de lista
+  x = [99 | x] //retorno -> [99, 1 , 2, 3, 4, 5]
+  //explicando ele pega o valor da esquerda e coloca na lista a direita.
+```
+
+**Head and Tail**
+Usado para pegar o primeiro elemento que é chamado de Head, já o Tail é o restante de lista. Ou seja Lista - Head.
+Ex: [1, 2, 3, 4]
+Head = 1
+Tail = [2,3,4]
+
+```elixir
+ x = [1, 2, 3, 4]
+ hd x // -> 1
+ tl x // -> [2,3,4]
+```
+
+### Tupla
+
+```elixir
+  x = {1 , 2, 3}
+  elem(x,2) // Pega tupa x e procura o elemento da posição 2.
+  
+```
+
+
+
+
+---
 Em elixir temos o que chamamos de módulos e eles são um conjunto
 de funções.
 

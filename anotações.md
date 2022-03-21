@@ -48,6 +48,7 @@ Os átomos devem ser compostos de caracteres Unicode, como letras, números, sub
 ```elixir
   :"this is an atom with spaces" :"this is an atom with spaces"
 ```
+
 ### Lista
 Tem o conceito de lista encadeada.
 O melhor jeito de inteirar uma lista é adicionando valor ao seu inicio.
@@ -78,8 +79,123 @@ Tail = [2,3,4]
   
 ```
 
+### Pattern Matching
+
+Usado para fluxo de execução
 
 
+### Pipe Operator
+"|>"
+
+Em elixir por causa do seu conceito de imutabilidade, temos que ficar reatribuindo para poder mudar o valor.
+
+```elixir
+  x = "  RaFaEl "
+  x = String.trim(x)
+  //"RaFaEl"
+  x = String.downcase(x)
+  //"rafael"
+
+  //usando o pipe agora
+
+  x = " RaFaEl " |> String.trim() |> String.downcase()
+  //"rafael"
+
+```
+
+O Pipe operator pega o resultado anterior e passa como argumento para função seguinte.
+
+OBS: Quando usamos o pipe operator, o primeiro parâmetro da função após o operador pipe é implicito, pois o elixir fazer o preenchimento automaticamente.
+
+---
+
+### Técnicas para resolver um mesmo problema.
+
+Vamos ler um arquivo txt, que tenha números separados por vígulas.
+**OBS: as técnicas usadas abaixo não serve apenas para ler arquivos mas para qualquer coisa.**
+
+1- Primera forma
+
+```elixir
+def build(file_name) do
+    file = File.read(file_name)
+    file
+end 
+```
+
+2- Segunda forma usando o pattern matching
+
+```elixir
+def build(file_name) do
+    {:ok, file} = File.read(file_name)
+    file
+end 
+```
+
+3- Usando o case e o pattern matching
+
+```elixir
+def build(file_name) do
+  # palavra reservada case, seguido do que quero dar matching
+    case File.read(file_name) do
+      {:ok, result} -> result
+      {:erro, reason} -> reason
+end 
+```
+
+4- Usando o pattern matching e funções
+
+```elixir
+def build(file_name) do
+  
+    file = File.read(file_name)
+    handle_file_read(file)
+end 
+
+def handle_file_read({:ok, result}), do: result
+def handle_file_read({:error, reason}), do: reason
+```
+
+5- Usando o pattern matching e pipe operator (Forma mais recomendada)
+
+```elixir
+def build(file_name) do
+    file_name
+    |> File.read()
+    |> handle_file_read()
+end 
+
+def handle_file_read({:ok, result}) do: result
+def handle_file_read({:error, reason}), do: reason
+```
+
+### Outra técnica 
+
+Enum.map(list, fn number -> String.to_integer(number) end)
+quando temos uma função que sempre pego cada elemento de uma lista
+e preciso passar como parâmetro para uma função já existente eu uso a sintaxe abaixo
+chamando o & na frente do nome da função e colocando a quantidade de parâmetros.
+se acaso for apenas 1 não é necessário passar mas se for mais usamos o seguinte
+&String.to_integer/2(segundo parametro)
+
+```elixir
+    def handle_file_read({:ok, result}) do
+      result
+      |> String.split(",")
+      |> Enum.map(&String.to_integer/1)
+  end
+```
+
+### Guards
+
+forma de deixar o pattern matching melhor ou empoderada. Palavra reservada **when**
+
+```elixir
+  def evaluete_numbers(number) when rem(number,3) == 0, do: :fizz
+  def evaluete_numbers(number) when rem(number,5) == 0, do: :buzz
+  def evaluete_numbers(number) when rem(number,3) == 0 and rem(number,5) == 0, do: :fizzbuzz
+  def evaluete_numbers(number), do: number
+```
 
 ---
 Em elixir temos o que chamamos de módulos e eles são um conjunto

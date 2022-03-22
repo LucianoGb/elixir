@@ -109,6 +109,27 @@ OBS: Quando usamos o pipe operator, o primeiro parâmetro da função após o op
 
 ---
 
+### Declaração de funções
+
+Assim como os nomes de variáveis, os nomes de funções usam o formato snake case ( function_name ).
+
+Eles também podem terminar com !ou ?.
+
+A convenção no Elixir é que funções terminadas com !denotam que a função pode gerar um erro 
+e funções que terminam com ? retornarão um valor booleano (true ou false).
+
+Sintaxe
+
+```elixir
+  # Declaração normal
+  def nome () do
+    #codigos
+  end
+
+  # Declaração curta
+  def nome(), do: #codigo
+```
+
 ### Técnicas para resolver um mesmo problema.
 
 Vamos ler um arquivo txt, que tenha números separados por vígulas.

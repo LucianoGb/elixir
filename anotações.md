@@ -12,17 +12,21 @@ Vantagens:
 Elixir usa a máquina Erlang.
 
 ### IEX - Interative Elixir (Terimnal interativo)
+
 É parecido com o irb do ruby ou o idle do python.
 
 Exemplo de uso:
+
 ```elixir
  h String
 ```
+
 Vai me mostrar toda documentação do módulo de string do sistema.
 
 ```elixir
  h String.slice/2
 ```
+
 mostra a documentação da função slice.
 
 ### Tipos básicos
@@ -37,6 +41,7 @@ nulo = nil // em elixir nulo é chamado de nill
 ```
 
 ### Atom
+
 Atons são constantes cujo o valor é o seu próprio nome.
 
 Muitas vezes eles são usados ​​para expressar o estado de uma operação, usando valores como :oke :error.
@@ -50,6 +55,7 @@ Os átomos devem ser compostos de caracteres Unicode, como letras, números, sub
 ```
 
 ### Lista
+
 Tem o conceito de lista encadeada.
 O melhor jeito de inteirar uma lista é adicionando valor ao seu inicio.
 
@@ -83,8 +89,8 @@ Tail = [2,3,4]
 
 Usado para fluxo de execução
 
-
 ### Pipe Operator
+
 "|>"
 
 Em elixir por causa do seu conceito de imutabilidade, temos que ficar reatribuindo para poder mudar o valor.
@@ -115,8 +121,15 @@ Assim como os nomes de variáveis, os nomes de funções usam o formato snake ca
 
 Eles também podem terminar com !ou ?.
 
-A convenção no Elixir é que funções terminadas com !denotam que a função pode gerar um erro 
+A convenção no Elixir é que funções terminadas com !denotam que a função pode gerar um erro
 e funções que terminam com ? retornarão um valor booleano (true ou false).
+
+Elixir possui o que retorno implicito, então qualquer que seja o ultimo valor, ele sera retornado.
+
+Elixir permite métodos com o mesmo nome porém apenas com quantidade de parâmetros diferentes.
+metodo/1 -> quer dizer que tem apenas um parâmetro e por ai vai.
+
+O nome que se dar ao números de parâmetros de um método é Aridade
 
 Sintaxe
 
@@ -130,7 +143,21 @@ Sintaxe
   def nome(), do: #codigo
 ```
 
-### Técnicas para resolver um mesmo problema.
+** Funções privadas
+
+basta colocar um "p" após o def
+
+```elixir
+  # Declaração normal
+  defp nome () do
+    #codigos
+  end
+
+  # Declaração curta
+  defp nome(), do: #codigo
+```
+
+### Técnicas para resolver um mesmo problema
 
 Vamos ler um arquivo txt, que tenha números separados por vígulas.
 **OBS: as técnicas usadas abaixo não serve apenas para ler arquivos mas para qualquer coisa.**
@@ -190,7 +217,7 @@ def handle_file_read({:ok, result}) do: result
 def handle_file_read({:error, reason}), do: reason
 ```
 
-### Outra técnica 
+### Outra técnica
 
 Enum.map(list, fn number -> String.to_integer(number) end)
 quando temos uma função que sempre pego cada elemento de uma lista
@@ -219,6 +246,8 @@ forma de deixar o pattern matching melhor ou empoderada. Palavra reservada **whe
 ```
 
 ---
+### Módulos
+
 Em elixir temos o que chamamos de módulos e eles são um conjunto
 de funções.
 
@@ -234,26 +263,35 @@ MIX -> mix é o CLI do elixir, com ele podemos criar projetos,baixar
 dependência e etc...
 
 mix new cards -> cria um novo projeto chamado cards
+recompile -> comando para recompilar o código.
+iex -S mix -> abre projeto dentro do iex
 
 ```terminal iex -S mix``` -> compila o projeto e abre o cli do Elixir para interação
 
-Função / Método
+### Structs
+
+Serve para fazer estruturas/moldes, lembra uma classe.
 
 ```elixir
-def nome do
-#code here
-end
+  defmodule Exmon.Player do
+    #declarando uma struct
+    defstruct [:life, :name, :move_rnd, :move_avg, :move_heal]
+  
+  end
+
 ```
+Para acessar no IEX -> %ExMon.Player{}
 
-Elixir possui o que retorno implicito, então qualquer que seja o ultimo valor, ele sera retornado.
+A diferença de uma struct e um MAP é que struct tem um nome.
 
-recompile -> comando para recompilar o código.
+Obrigando a usar das as chaves da struct.
 
-Elixir permite métodos com o mesmo nome porém apenas com quantidade de parâmetros diferentes.
+```elixir
+  defmodule Exmon.Player do
+    @enforce_keys [:life, :name, :move_rnd, :move_avg, :move_heal]
+    defstruct [:life, :name, :move_rnd, :move_avg, :move_heal]
+  
+  end
 
-metodo/1 -> quer dizer que tem apenas um parâmetro e por ai vai.
-
-o nome que se dar ao números de parâmetros de um método é Aridade
-
-Imutabilidade
-elixir tem o conceito de imutabilidade ou seja nenhuma estrutura de dados sofre alteração, o elixir pega ela e cria uma nova estrutura, mantendo assim o estado atual da estrutura de origem.
+```
+Para 

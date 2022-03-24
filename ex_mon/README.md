@@ -1,21 +1,11 @@
 # ExMon
 
-**TODO: Add description**
+ExMon é um jogo de turnos, feito através do curso de elixir https://www.udemy.com/course/elixir-e-phoenix-do-zero/
 
-## Installation
+No curso estamos vendo toda parte de fundamentos da linguagem.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `ex_mon` to your list of dependencies in `mix.exs`:
+Para iniciar o jogo é necessario usar o comando:
 
-```elixir
-def deps do
-  [
-    {:ex_mon, "~> 0.1.0"}
-  ]
-end
+```bash
+  iex -S mix
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/ex_mon>.
-

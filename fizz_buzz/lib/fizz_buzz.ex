@@ -22,7 +22,7 @@ defmodule FizzBuzz do
     |> evaluete_numbers()
   end
 
-  # guards mais ou menos uma lógica de if else, pois em elixir não se recomenda o uso do mesmo.
+  # guards são mais ou menos uma lógica de if else, pois em elixir não se recomenda o uso do mesmo.
   defp evaluete_numbers(number) when rem(number, 3) == 0 and rem(number, 5) == 0, do: :fizzbuzz
   defp evaluete_numbers(number) when rem(number, 3) == 0, do: :fizz
   defp evaluete_numbers(number) when rem(number, 5) == 0, do: :buzz

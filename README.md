@@ -294,4 +294,6 @@ Obrigando a usar das as chaves da struct.
   end
 
 ```
-Para 
+
+Procurar Operation Catalog
+https://martinfowler.com/articles/collection-pipeline/

@@ -284,13 +284,12 @@ Para acessar no IEX -> %ExMon.Player{}
 
 A diferença de uma struct e um MAP é que struct tem um nome.
 
-Obrigando a usar das as chaves da struct.
+Obrigando o uso das as chaves da struct.
 
 ```elixir
   defmodule Exmon.Player do
     @enforce_keys [:life, :name, :move_rnd, :move_avg, :move_heal]
     defstruct [:life, :name, :move_rnd, :move_avg, :move_heal]
-  
   end
 
 ```

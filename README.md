@@ -11,7 +11,7 @@ Vantagens:
 
 Elixir usa a máquina Erlang.
 
-### IEX - Interative Elixir (Terimnal interativo)
+## IEX - Interative Elixir (Terimnal interativo)
 
 É parecido com o irb do ruby ou o idle do python.
 
@@ -246,6 +246,7 @@ forma de deixar o pattern matching melhor ou empoderada. Palavra reservada **whe
 ```
 
 ---
+
 ### Módulos
 
 Em elixir temos o que chamamos de módulos e eles são um conjunto
@@ -280,6 +281,7 @@ Serve para fazer estruturas/moldes, lembra uma classe.
   end
 
 ```
+
 Para acessar no IEX -> %ExMon.Player{}
 
 A diferença de uma struct e um MAP é que struct tem um nome.
@@ -295,4 +297,5 @@ Obrigando o uso das as chaves da struct.
 ```
 
 Procurar Operation Catalog
-https://martinfowler.com/articles/collection-pipeline/
+
+<https://martinfowler.com/articles/collection-pipeline/>

@@ -11,14 +11,12 @@ defmodule ExMon.Player do
     # acessando uma struct
     %ExMon.Player{
       life: @max_life,
-      move_avg: move_avg,
-      move_heal: move_heal,
-      move_rnd: move_rnd,
+      move:%{
+        move_avg: move_avg,
+        move_heal: move_heal,
+        move_rnd: move_rnd,
+      }
       name: name
-
-
-
-
     }
   end
 end

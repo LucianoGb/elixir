@@ -1,4 +1,4 @@
-# Elixir
+# Elixir2
 
 Linguagem funcional e dinâmica.
 
